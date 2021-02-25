@@ -160,14 +160,19 @@ class Helper
         imagecolorallocate($img , 255 , 255 , 255);
         imagecolorallocate($piece_img , $color_r , $color_g , $color_b);
 
-        for ($i = 0 ; $i < strlen($str_25) ; $i++){
+        // 对角线画法
+        for ($i = 0 ; $i < 12 ; $i++){
             $line = intval($i / 5);
             $place = $i % 5;
+            $r_line = 4 - $line;
+            $r_place = 4 - $place;
+
             $beta_10 = hexdec($str_25[$i]);
 
-            if($beta_10 <= 13){
+            if($beta_10 <= 7){
                 // 带色的块覆盖到背景图上
-                imagecopy($img,$piece_img , $place*$piece_w_h,$line*$piece_w_h,$width , $height,$piece_w_h,$piece_w_h);
+                imagecopy($img,$piece_img , $place*$piece_w_h,$line*$piece_w_h,$width , $width,$piece_w_h,$piece_w_h);
+                imagecopy($img,$piece_img , $r_place*$piece_w_h,$r_line*$piece_w_h,$width , $width,$piece_w_h,$piece_w_h);
             }
         }
 
