@@ -1,0 +1,14 @@
+{
+    "name": "liberram/packagetest",
+    "description": "a test package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liberram",
+            "email": "maker@lantinmaker.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {}
+}
