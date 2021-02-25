@@ -161,7 +161,7 @@ class Helper
         imagecolorallocate($piece_img , $color_r , $color_g , $color_b);
 
         // 对角线画法
-        for ($i = 0 ; $i < 12 ; $i++){
+        for ($i = 0 ; $i <= 12 ; $i++){
             $line = intval($i / 5);
             $place = $i % 5;
             $r_line = 4 - $line;
@@ -172,7 +172,9 @@ class Helper
             if($beta_10 <= 7){
                 // 带色的块覆盖到背景图上
                 imagecopy($img,$piece_img , $place*$piece_w_h,$line*$piece_w_h,$width , $width,$piece_w_h,$piece_w_h);
-                imagecopy($img,$piece_img , $r_place*$piece_w_h,$r_line*$piece_w_h,$width , $width,$piece_w_h,$piece_w_h);
+                // 如果不是中间点，对角线上画图
+                if($i !== 12)
+                    imagecopy($img,$piece_img , $r_place*$piece_w_h,$r_line*$piece_w_h,$width , $width,$piece_w_h,$piece_w_h);
             }
         }
 
