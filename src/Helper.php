@@ -165,7 +165,7 @@ class Helper
             $place = $i % 5;
             $beta_10 = hexdec($str_25[$i]);
 
-            if($beta_10 <= 13){
+            if($beta_10 <= 7){
                 // 带色的块覆盖到背景图上
                 imagecopy($img,$piece_img , $place*$piece_w_h,$line*$piece_w_h,$width , $width,$piece_w_h,$piece_w_h);
             }
