@@ -9,6 +9,13 @@
             "email": "maker@lantinmaker.com"
         }
     ],
-    "minimum-stability": "beta",
-    "require": {}
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "liberram\\packagetest\\": "src"
+        }
+    }
 }
